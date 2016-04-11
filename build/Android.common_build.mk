@@ -65,10 +65,6 @@ ART_TARGET_CFLAGS :=
 
 # Host.
 ART_HOST_CLANG := false
-ifneq ($(WITHOUT_HOST_CLANG),true)
-  # By default, host builds use clang for better warnings.
-  ART_HOST_CLANG := true
-endif
 
 # Clang on the target. Target builds use GCC by default.
 ifneq ($(USE_CLANG_PLATFORM_BUILD),)
@@ -180,9 +176,6 @@ art_cflags := \
   -fno-rtti \
   -std=gnu++11 \
   -ggdb3 \
-  -Wall \
-  -Werror \
-  -Wextra \
   -Wstrict-aliasing \
   -fstrict-aliasing \
   -Wunreachable-code \
